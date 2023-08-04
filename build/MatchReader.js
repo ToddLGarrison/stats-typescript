@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.MatchReader = void 0;
 const Utils_1 = require("./Utils");
 class MatchReader {
     constructor(reader) {
@@ -8,7 +9,7 @@ class MatchReader {
     }
     load() {
         this.reader.read();
-        this.reader.data.map((row) => {
+        this.matches = this.reader.data.map((row) => {
             return [
                 (0, Utils_1.dateStringToDate)(row[0]),
                 row[1],
@@ -21,3 +22,4 @@ class MatchReader {
         });
     }
 }
+exports.MatchReader = MatchReader;
